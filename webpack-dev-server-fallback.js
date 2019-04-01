@@ -3,13 +3,11 @@ const express = require('express');
 const INTERNAL_STATIC_PATH = '___webpack-dev-server-fallback___';
 const INTERNAL_STATIC_PATH_REGEXP = new RegExp(`^/${INTERNAL_STATIC_PATH}`);
 
-module.exports = function({directory, wait} = {}, fn = () => null) {
+module.exports = function({directory, wait} = {}) {
   directory = directory || 'fallback';
   wait = !wait && wait !== 0 ? 300 : wait;
 
   return function(app, server) {
-    fn(app, server);
-
     const isReady = () => new Promise((resolve) => {
       server.middleware.waitUntilValid(() => resolve(true));
       setTimeout(() => resolve(false), wait);
