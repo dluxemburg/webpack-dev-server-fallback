@@ -1,7 +1,7 @@
 {
   "name": "webpack-dev-server-fallback",
-  "version": "1.0.0",
-  "dependencies": {
+  "version": "1.0.1",
+  "peerDependencies": {
     "express": "*"
   },
   "description": "Use a static directory as a fallback for requests to `webpack-dev-server` when the build isn't ready.",
