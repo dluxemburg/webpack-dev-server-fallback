@@ -3,5 +3,28 @@
   "version": "1.0.0",
   "dependencies": {
     "express": "*"
+  },
+  "description": "Use a static directory as a fallback for requests to `webpack-dev-server` when the build isn't ready.",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dluxemburg/webpack-dev-server-fallback.git"
+  },
+  "keywords": [
+    "webpack",
+    "webpack-dev-server",
+    "fallback"
+  ],
+  "author": "Daniel Luxemburg",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dluxemburg/webpack-dev-server-fallback/issues"
+  },
+  "homepage": "https://github.com/dluxemburg/webpack-dev-server-fallback#readme",
+  "devDependencies": {
+    "eslint": "^5.16.0"
   }
 }

@@ -14,20 +14,17 @@ module.exports = function({directory, wait} = {}) {
     });
 
     app.get('*', async(req, res, next) => {
-      if (INTERNAL_STATIC_PATH_REGEXP.test(req.url)) {
-        next();
-        return;
-      }
+      if (!INTERNAL_STATIC_PATH_REGEXP.test(req.url)) {
+        const ready = await isReady();
 
-      const ready = await isReady();
-
-      if (!ready) {
-        req.url = `/${INTERNAL_STATIC_PATH}${req.url}`;
+        if (!ready) {
+          req.url = `/${INTERNAL_STATIC_PATH}${req.url}`;
+        }
       }
 
       next();
     });
 
     app.use(`/${INTERNAL_STATIC_PATH}`, express.static(directory));
-  }
+  };
 };
