@@ -4,7 +4,7 @@ Use a static directory as a fallback for requests to `webpack-dev-server` when t
 
 Useful in conjunction with [HtmlWebpackPlugin](https://github.com/jantimon/html-webpack-plugin) to avoid blank screens and timeouts.
 
-Don't use `webpack-dev-server` in production. This is for inbetween cases.
+Don't use `webpack-dev-server` in production. This is for in-between cases.
 
 ## Install
 
